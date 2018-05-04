@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exo AJAX</title>
+    <script type="text/javascript" src="./functions/xhrfunction.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+        var toto = xhrFunction();
+
+console.log(toto);
+toto.onreadystatechange = function(){
+
+    if (toto.readyState == 4 && toto.status == 200) {
+        alert(toto.responseText);
+        }
+
+
+    };
+
+
+        toto.open("GET", "reponse.php?parametre1=20&parametre2=10", true);
+        toto.send(null);
+
+</script>
+
+</body>
+</html>
